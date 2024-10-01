@@ -1,0 +1,13 @@
+{
+    "add-config": {
+        "scope": "json",
+        "prefix": "add-mbed-config",
+        "body": [
+            "\"${TM_SELECTED_TEXT/(.*)/${1:/downcase}/}\": {",
+            "    \"help\": \"${0:description}\",",
+            "    \"macro_name\": \"$TM_SELECTED_TEXT\",",
+            "    \"value\": ${2:\"value\"}",
+            "},"
+        ]
+    }
+}

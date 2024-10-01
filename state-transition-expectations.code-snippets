@@ -1,0 +1,54 @@
+{
+	"Unconfigure State Expectation": {
+		"prefix": "unconfigured-state-expectations",
+		"body": [
+			"auto state_after_transition_${1} = hw_component_manager->${1}();",
+			"EXPECT_EQ(",
+			"  kUnconfiguredStateStr,",
+			"  state_after_transition_${1}.label());",
+			"EXPECT_EQ(",
+			"  lifecycle_msgs::msg::State::PRIMARY_STATE_UNCONFIGURED,",
+			"  state_after_transition_${1}.id());"
+		],
+		"description": "Test state transition to unconfigured"
+	},
+	"Inactive State Expectation": {
+		"prefix": "inactive-state-expectations",
+		"body": [
+			"auto state_after_transition_${1} = hw_component_manager->${1}();",
+			"EXPECT_EQ(",
+			"  kInactiveStateStr,",
+			"  state_after_transition_${1}.label());",
+			"EXPECT_EQ(",
+			"  lifecycle_msgs::msg::State::PRIMARY_STATE_INACTIVE,",
+			"  state_after_transition_${1}.id());"
+		],
+		"description": "Test state transition to inactive"
+	},
+	"Active State Expectation": {
+		"prefix": "active-state-expectations",
+		"body": [
+			"auto state_after_transition_${1} = hw_component_manager->${1}();",
+			"EXPECT_EQ(",
+			"  kActiveStateStr,",
+			"  state_after_transition_${1}.label());",
+			"EXPECT_EQ(",
+			"  lifecycle_msgs::msg::State::PRIMARY_STATE_ACTIVE,",
+			"  state_after_transition_${1}.id());"
+		],
+		"description": "Test state transition to active"
+	},
+	"Finalized State Expectation": {
+		"prefix": "finalized-state-expectations",
+		"body": [
+			"auto state_after_transition_${1} = hw_component_manager->${1}();",
+			"EXPECT_EQ(",
+			"  kFinalizedStateStr,",
+			"  state_after_transition_${1}.label());",
+			"EXPECT_EQ(",
+			"  lifecycle_msgs::msg::State::PRIMARY_STATE_FINALIZED,",
+			"  state_after_transition_${1}.id());"
+		],
+		"description": "Test state transition to finalized"
+	}
+}
